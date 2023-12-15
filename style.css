@@ -91,7 +91,3 @@ ul li.checked {
 ul li.checked::before {
     background-image: url(img/checked.png);
 }
-.list-container {
-
-
-}

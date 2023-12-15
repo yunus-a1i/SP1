@@ -4,14 +4,28 @@ const listContainer=document.getElementById("list-container");
 function addTask(){
     if(inputBox.value === ''){
         alert("Input is Empty!");
-    }
-    else {
+    }else{
+
+    
+    
         let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
+        let litext = document.createTextNode(`${inputBox.value}`);
+        li.appendChild(litext);
+        
+        const element = document.querySelector("#listContainer");
+
+        element.appendChild(li);
+        
     }
     inputBox.value = "";
+}
+
+function check(){
+    let listItems = document.querySelectorAll("ul li");
+    listItems.forEach(function(item) {
+    item.onclick = function(e) {
+    this.setAttribute("class","checked");
+    
+  }
+});
 }
